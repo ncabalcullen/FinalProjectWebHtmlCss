@@ -1,0 +1,284 @@
+/* NORMALIZACION */
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* ESTO MANTIENE EL ANCHO Y ALTO A PESAR DEL PADDING Y BORDER*/
+    font-family: 'Inconsolata', monospace;
+    list-style: none; /* QUITAR PUNTOS DE LAS LISTAS*/
+    text-decoration: none; /*QUITAR EL SUBRAYADO DE LOS ENLACES*/
+    color: white;
+}
+
+body{
+    background-color: rgb(50, 50, 50); /*BORRAR CUANDO ESTÉ EL FONDO FINAL*/
+}
+
+header{
+    position: fixed; /* ESTO HACE QUE EL HEADER SE QUEDE FIJO EN LA PARTE SUPERIOR*/
+    right: 0;
+    top: 0;
+    z-index: 100; /*ESTO HACE QUE EL HEADER SIEMPRE ESTÉ ENCIMA*/
+    width: 100%;
+    display: flex; /*ESTO ES PARA PONER LOS ELEMENTOS EN LINEA*/
+    align-items: center; /*CENTRA VERTICALMENTE PORQUE ESTA IMPLICITO EL FLEW ROW*/
+    justify-content: space-between; /*HACE QUE LOS ELEMENTOS SE SEPAREN*/
+    padding: 15px 3%;
+    background-color: transparent;
+}
+
+.logo{
+    font-size: 30px; /*TAMAÑO FUENTE LOGO*/
+    font-weight: 800; /*GROSOR FUENTE LOGO*/
+}
+
+.navlist{
+    display: flex; /*PARA QUE LOS ELEMENTOS DEL UL SE PONGAN EN LINEA*/
+}
+.navlist a{
+    margin-left: 40px;
+    font-size: 18px;
+    font-weight: 500;
+    border-bottom: 2px solid transparent; /*SUBRAYADO TRANSPARENTE*/
+    transition: all .5s ease; /*ANIMAR TODAS LAS CARACTERISTICAS DE .NAVLIST A*/
+}
+
+.navlist a:hover{
+    border-bottom: 2px solid white;
+
+}
+
+#menu-icon{
+    display: none; /*SE PONE EN NONE PARA QUE SOLO SE VEA CUANDO LA PAGINA ESTÉ COLAPSADA DE FORMA HORIZONTAL*/
+    font-size: 35px;
+    z-index: 101; /*PARA QUE ESTÉ SOBRE EL HEADER*/
+    cursor: pointer;  /*PARA QUE SE VEA DISTINTO EL CURSOR POR ENCIMA*/
+} 
+
+#menu-toggle{
+    display: none; /*PARA NO VER EL CHECKBOX*/
+}
+.menu-icon-action{
+    display: none; /*PARA QUE NO SE LE PUEDA HACER CLIC*/
+}
+
+.hero{
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(245.59deg,#31494e 0%,#385e70 25%,#131313 75%); /*FONDO DE COLOR GRADIENTE*/
+    position: relative; /*PARA QUE SEA RELATIVO AL CONTENEDOR, PERMITE USAR TOP, BOTTOM, LEFT, Y RIGHT*/
+    display: grid; 
+    grid-template-columns: .6fr 1fr; /*PARA QUE EL HERO SE PUEDA DIVIDIR EN DOS COLUMNAS*/
+    align-items: center; /*PARA ALINEAR VERTICALMENTE*/
+    gap: 2rem; /*PARA EL ESPACIO ENTRE LAS COLUMNAS*/
+}
+
+section{
+    padding: 0 12%;
+}
+
+.hero-text h5{
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+.hero-text h1{
+    font-family: "Space Mono", monospace;
+    font-size: 75px;
+    line-height: 1;
+    margin: 10px 0 40px 0;
+    
+}
+
+.hero-text h4{
+    font-size: 25px;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+.hero-text p{
+    font-size: 100%;
+    margin-bottom: 40px;
+    line-height: 1.5;
+}
+.hero-img img{
+    width: 400px;
+    margin: 10% 0 0 10%;
+    height: auto;
+    position: absolute;
+    right: 10%;
+    bottom: 10%;
+    transition: all 1s linear; /*TRANSICION LINEAL*/
+}
+
+.hero-img img:hover{
+    width: 200px;
+    opacity: 0.6;
+}
+
+.hero-text a{
+    display: inline-block; /*PARA QUE PERMITA USAR ANCHO Y ALTO*/
+    background-color: #4d4d4d;
+    border: 1px solid transparent;
+    padding: 15px 30px;
+    line-height: 1.4;
+    font-size: 15px;
+    margin-bottom: 10px;
+    margin-right: 3px;
+    font-weight: 500;
+    border-radius: 60px;
+    text-transform: uppercase;
+    transition: all .5s ease;
+}
+
+.hero-text a:hover{
+    background-color: transparent;
+    border: 1px solid white;
+    transform: translateX(8px);
+}
+
+.hero-text a.videos{
+    background-color: transparent;
+    border: 1px solid white;
+    width: 60%;
+}
+.hero-text a.cv{
+    border: 1px solid white;
+    width: 60%;
+}
+.hero-text a.porfolio{
+    border: 1px solid white;
+    width: 60%;
+}
+
+.hero-text a.videos i{
+    vertical-align: top;
+    margin-right: 5px;
+}
+
+.icons{
+    position: absolute;
+    top: 50vh;
+    padding: 0 3%;
+    transform: translateY(-50%);
+}
+
+.icons i{
+    display: block;
+    margin: 26px 0;
+    font-size: 40px;
+    transition: all .5s ease;
+}
+
+.icons i:hover{
+    color: #4d4d4d;
+    transform: translateY(-5px);
+}
+
+.scroll-down{
+    position: absolute;
+    bottom: 6%;
+    right: 5%;
+}
+
+.scroll-down i{
+    display: block;
+    padding: 12px;
+    font-size: 45px;
+    transition: all .5s ease;
+}
+
+.scroll-down i:hover{
+    transform: translateY(3px);
+    font-size: 50px;
+}
+
+
+@media(max-width: 992px){
+    section{
+        padding: 0 3%;
+        transition: .2s;
+    }
+
+    .icons{
+        display: none;
+    }
+    .hero-text{
+        padding-top: 0;
+    }
+
+    .hero-img{
+        text-align: center;
+    }
+
+    .hero-img img{
+        width: 40%;
+        margin: 10% 0 0 10%;
+    }
+    .hero-text p {
+        font-size: 70%;
+    }
+    .scroll-down{
+        display: none;
+    }
+}
+
+@media (max-width: 600px){
+
+    .menu-icon-action{
+        display: block;
+    }
+    #menu-icon{
+        display: block;
+    }
+
+    .hero-text{
+        text-align: center;
+        padding-top: 100px;
+    }
+    .hero-img {
+        
+        position: relative;
+        text-align: center;
+
+    }
+
+    .hero-img img{
+        position: relative;
+        text-align: center;
+
+    }
+    .hero{
+        height: 100%;
+        gap: 1rem;
+        grid-template-columns: auto;
+    }
+
+    .navlist{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 200px;
+        height: 180px;
+        background-color: #1b1a1a77;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px;
+        transition: all .5s ease-out;
+    }
+
+    .navlist a{
+        display: block;
+        margin: 7px 0;
+    }
+
+    #menu-toggle:checked + label.menu-icon-action +ul{
+        right: 0;
+
+    }
+
+
+}
